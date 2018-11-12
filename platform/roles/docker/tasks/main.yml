@@ -1,0 +1,20 @@
+---
+
+- name: Install required packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+    - docker
+
+- name: Ensure pip_install_packages are installed.
+  pip:
+    name: docker-py
+
+- name: Enable and start Docker service
+  service:
+    name: docker
+    enabled: yes
+    daemon_reload: yes
+    state: started

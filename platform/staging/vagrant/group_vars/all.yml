@@ -1,0 +1,28 @@
+oauthservice_sso_dn: iam.vagrant.oauth.fun.dis.nz
+oauthservice_sso_path: "http://{{ oauthservice_sso_dn }}:8080/oauthservice"
+vagrant_env: true
+
+
+wildfly_admin_password: password
+wildfly_iam_bind_address: 10.128.250.4
+wildfly_testharness_bind_address: 10.128.250.5
+
+#TODO: clean up -> used for mariadb data source
+wildfly_user: wildfly
+wildfly_group: wildfly
+
+#TODO: not sure about these sort out later
+mariadb_bind_address: 10.128.250.6
+mariadb_db_name: amservice
+mariadb_root_password: password
+maria_db_user: amuser
+
+path_to_sql: /vagrant/build/database/target/
+
+maria_db_download_url: https://downloads.mariadb.com/Connectors/java/connector-java-2.2.3
+maria_db_version_jar: mariadb-java-client-2.2.3.jar
+maria_db_jndi_name: java:/MariaDB
+maria_db_con: "jdbc:mysql://{{ mariadb_bind_address }}:3306/database"
+maria_db_ds_name: MariaDB
+
+download_dir: /vagrant/platform/downloads

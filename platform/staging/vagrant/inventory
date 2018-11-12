@@ -1,0 +1,4 @@
+oauthfun ansible_connection=local
+
+[all]
+oauthfun
